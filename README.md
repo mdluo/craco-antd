@@ -86,7 +86,7 @@ $ npm i -S craco-antd antd
 Here is a complete `craco.config.js` configuration file that sets up Less compilation and `babel-plugin-import` for `create-react-app`:
 
 ```js
-const CracoAntDesignPlugin = require("craco-antd");
+const CracoAntDesignPlugin = require('craco-antd');
 
 module.exports = {
   plugins: [{ plugin: CracoAntDesignPlugin }],
@@ -101,31 +101,31 @@ It also sets up [Preact](https://preactjs.com/) with the [`craco-preact`](https:
 I put my custom theme variables in `src/style/AntDesign/customTheme.less`. I also use that folder for some custom components and other CSS.
 
 ```javascript
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const WebpackBar = require("webpackbar");
-const CracoAntDesignPlugin = require("craco-antd");
-const path = require("path");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const WebpackBar = require('webpackbar');
+const CracoAntDesignPlugin = require('craco-antd');
+const path = require('path');
 
 // Don't open the browser during development
-process.env.BROWSER = "none";
+process.env.BROWSER = 'none';
 
 module.exports = {
   webpack: {
     plugins: [
       new WebpackBar({ profile: true }),
-      ...(process.env.NODE_ENV === "development"
+      ...(process.env.NODE_ENV === 'development'
         ? [new BundleAnalyzerPlugin({ openAnalyzer: false })]
         : []),
     ],
   },
   plugins: [
-    { plugin: require("craco-preact") },
+    { plugin: require('craco-preact') },
     {
       plugin: CracoAntDesignPlugin,
       options: {
         customizeThemeLessPath: path.join(
           __dirname,
-          "src/style/AntDesign/customTheme.less"
+          'src/style/AntDesign/customTheme.less',
         ),
       },
     },
@@ -152,7 +152,7 @@ You can modify the default Ant Design theme by changing some Less variables.
 You can also customize these variables directly in your `craco.config.js` with the `customizeTheme` option:
 
 ```js
-const CracoAntDesignPlugin = require("craco-antd");
+const CracoAntDesignPlugin = require('craco-antd');
 
 module.exports = {
   plugins: [
@@ -160,8 +160,8 @@ module.exports = {
       plugin: CracoAntDesignPlugin,
       options: {
         customizeTheme: {
-          "@primary-color": "#1DA57A",
-          "@link-color": "#1DA57A",
+          '@primary-color': '#1DA57A',
+          '@link-color': '#1DA57A',
         },
       },
     },
@@ -231,7 +231,7 @@ I prefer to set it at the top of `craco.config.js`:
 
 ```javascript
 // Don't open the browser during development
-process.env.BROWSER = "none";
+process.env.BROWSER = 'none';
 ```
 
 ## Options
@@ -259,16 +259,16 @@ module.exports = {
       plugin: CracoAntDesignPlugin,
       options: {
         lessLoaderOptions: {
-          modifyVars: { "@primary-color": "#1DA57A" },
+          modifyVars: { '@primary-color': '#1DA57A' },
           strictMath: true,
           noIeCompat: true,
         },
         cssLoaderOptions: {
           modules: true,
-          localIdentName: "[local]_[hash:base64:5]",
+          localIdentName: '[local]_[hash:base64:5]',
         },
         babelPluginImportOptions: {
-          libraryDirectory: "es",
+          libraryDirectory: 'es',
         },
       },
     },
@@ -281,13 +281,13 @@ module.exports = {
 You can use the [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) plugin to see a breakdown of all the JS and CSS in your webpack build. Here's how to add this plugin to your `craco.config.js` configuration file:
 
 ```js
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   webpack: {
     plugins: [new BundleAnalyzerPlugin()],
   },
-  plugins: [{ plugin: require("craco-antd") }],
+  plugins: [{ plugin: require('craco-antd') }],
 };
 ```
 
