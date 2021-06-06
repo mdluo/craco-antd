@@ -4709,9 +4709,9 @@ coveralls@^3.1.0:
     minimist "^1.2.5"
     request "^2.88.2"
 
-"craco-less@https://github.com/mdluo/craco-less/tarball/craco-less":
+"craco-less@https://github.com/mdluo/craco-less/tarball/master":
   version "1.17.1"
-  resolved "https://github.com/mdluo/craco-less/tarball/craco-less#1a146adda8506692e86ea935f80745c27fac92e4"
+  resolved "https://github.com/mdluo/craco-less/tarball/master#1a146adda8506692e86ea935f80745c27fac92e4"
   dependencies:
     less "^4.1.1"
     less-loader "^8.1.1"
