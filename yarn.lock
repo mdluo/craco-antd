@@ -4711,7 +4711,7 @@ coveralls@^3.1.0:
 
 "craco-less@https://github.com/mdluo/craco-less":
   version "1.17.1"
-  resolved "https://github.com/mdluo/craco-less#242c40fea7636305c87d290d6495efe739f4c769"
+  resolved "https://github.com/mdluo/craco-less#ada3265bf463baf83708bdece7d2a4479f53fa51"
   dependencies:
     less "^4.1.1"
     less-loader "^7.3.0"
